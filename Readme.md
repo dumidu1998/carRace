@@ -8,12 +8,12 @@ Each car has unique number, brand, sponsor and driver details.
 In order to manage this particular event ABC Pvt Ltd decided to develop an Application.
 Application functions are listed down.
 
-1.Register Car Details
+#### 1.Register Car Details
 
-2.Delete a car
+#### 2.Delete a car
 
-3.Insert 3 Rounds Results.
+#### 3.Insert 3 Rounds Results.
 
-4.Find out the winners (1st,2nd,3rd)
+#### 4.Find out the winners (1st,2nd,3rd)
 
-5.Search for a particular car
+#### 5.Search for a particular car

@@ -43,4 +43,9 @@ class Car {
         this.driver = driver;
     }
 
+    public void printCar() {
+        System.out.println("Car Details:\n Car name:" + uniqueId + "\nCar Brand: " + brand + "\nCar Sponsor: " + sponsor
+                + "\nCar Driver Name:  " + driver);
+    }
+
 }

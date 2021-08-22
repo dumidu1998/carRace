@@ -16,6 +16,10 @@ public class Main {
         System.out.println("Enter the driver name of the car: ");
         String driver = scanner.nextLine();
 
+        Car car1 = new Car(uniqueid, brand, sponsor, driver);
+
+        car1.printCar();
+
         System.out.println(uniqueid + " " + brand + " " + sponsor + " " + driver);
 
     }

@@ -34,6 +34,10 @@ public class Main {
     }
 
     public static Car RegisterCar() {
+        if (carcount == 5) {
+            System.out.println("Sorry, we can't register more cars.\n");
+            return null;
+        }
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the registration  number of a car: ");
         String carId = scanner.nextLine();
@@ -98,6 +102,18 @@ public class Main {
         }
         return false;
         
+    }
+
+    public static void DeleteCar() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the unique number of a car to be deleted: ");
+        String uniqueid = scanner.nextLine();
+        for (int i = 0; i < carcount; i++) {
+            if (cararray[i].getcarId().equals(uniqueid)) {
+                cararray[i] = null;
+                carcount--;
+            }
+        }
     }
 
 }

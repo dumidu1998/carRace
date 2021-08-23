@@ -1,22 +1,22 @@
 class Car {
-    private String uniqueId;
+    private String carId; //unique
     private String brand;
     private String sponsor;
     private String driver;
 
-    public Car(String uniqueId, String brand, String sponsor, String driver) {
-        this.uniqueId = uniqueId;
+    public Car(String carId, String brand, String sponsor, String driver) {
+        this.carId = carId;
         this.brand = brand;
         this.sponsor = sponsor;
         this.driver = driver;
     }
 
-    public String getUniqueId() {
-        return uniqueId;
+    public String getcarId() {
+        return carId;
     }
 
-    public void setUniqueId(String uniqueId) {
-        this.uniqueId = uniqueId;
+    public void setcarId(String carId) {
+        this.carId = carId;
     }
 
     public String getBrand() {
@@ -44,7 +44,7 @@ class Car {
     }
 
     public void printCar() {
-        System.out.println("Car Details:\n Car ID:" + uniqueId + "\n Car Brand: " + brand + "\n Car Sponsor: " + sponsor
+        System.out.println("Car Details:\n Car ID:" + carId + "\n Car Brand: " + brand + "\n Car Sponsor: " + sponsor
                 + "\n Car Driver Name:  " + driver + "\n\n");
     }
 

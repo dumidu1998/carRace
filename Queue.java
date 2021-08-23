@@ -22,7 +22,7 @@ public class Queue {
             array[rear] = element;
             size++;
         }
-    }
+    }  
 
     public int pop() {
         if (size == 0) {

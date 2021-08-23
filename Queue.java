@@ -4,17 +4,17 @@ public class Queue {
     private int size;
     private int front;
     private int rear;
-    private int[] array;
+    private Car[] array;
 
     public Queue(int maxSize) {
         this.maxSize = maxSize;
-        array = new int[maxSize];
+        array = new Car[maxSize];
         front = 0;
         rear = -1;
         size = 0;
     }
 
-    public void push(int element) {
+    public void enqueue(Car element) {
         if (size == maxSize) {
             System.out.println("Queue is full");
         } else {
@@ -22,18 +22,19 @@ public class Queue {
             array[rear] = element;
             size++;
         }
-    }  
+    }
 
-    public int pop() {
+    public Car dequeue() {
         if (size == 0) {
             System.out.println("Queue is empty");
         } else {
-            int element = array[front];
+            Car element = array[front];
             front = (front + 1) % maxSize;
             size--;
+            element.printCar();
             return element;
         }
-        return 0;
+        return null;
     }
 
     public int getSize() {

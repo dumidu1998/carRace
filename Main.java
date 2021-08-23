@@ -13,7 +13,7 @@ public class Main {
 
         while (true) {
             System.out.println(
-                    "Enter Operation: \n[1] - Register new Car\n[2]  - View All Cars\n[3] - Delete a Car \n[4] - Search for a Car\n");
+                    "Enter Operation: \n[1] - Register new Car\n[2] - View All Cars\n[3] - Delete a Car \n[4] - Search for a Car\n[5] - Enter Race Results");
             int operation = scanner.nextInt();
             switch (operation) {
                 case 1:
@@ -27,6 +27,12 @@ public class Main {
                     break;
                 case 4:
                     SearchForACar();
+                    break;
+                case 5:
+                    getResult();
+                    break;
+                default:
+                    System.out.println("Invalid Input!!!");
                     break;
             }
         }
@@ -94,7 +100,18 @@ public class Main {
         System.out.println("Invalid Car Id");
     }
 
-    public static void Results() {
+    public static void getResult() {
+        Scanner scanner = new Scanner(System.in);
+        Queue round1 = new Queue(6);
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Enter " + (i + 1) + "Place car ID");
+            round1.enqueue(cararray[i]);
+        }
+
+        Queue round2 = new Queue(5);
+
+        Queue round3 = new Queue(4);
+
         // input results
         // Search
     }

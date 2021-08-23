@@ -17,6 +17,10 @@ public class Main {
             int operation = scanner.nextInt();
             switch (operation) {
                 case 1:
+                    if (carcount == 6) {
+                        System.out.println("Sorry, we can't register more cars.\n");
+                        break;
+                    }
                     cararray[carcount] = RegisterCar();
                     break;
                 case 2:
@@ -39,7 +43,7 @@ public class Main {
     }
 
     public static Car RegisterCar() {
-        if (carcount == 5) {
+        if (carcount == 6) {
             System.out.println("Sorry, we can't register more cars.\n");
             return null;
         }

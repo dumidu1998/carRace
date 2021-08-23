@@ -1,5 +1,5 @@
 class Car {
-    private String carId; //unique
+    private String carId; // unique
     private String brand;
     private String sponsor;
     private String driver;
@@ -45,7 +45,7 @@ class Car {
 
     public void printCar() {
         System.out.println("Car Details:\n Car ID:" + carId + "\n Car Brand: " + brand + "\n Car Sponsor: " + sponsor
-                + "\n Car Driver Name:  " + driver + "\n\n");
+                + "\n Car Driver Name: " + driver + "\n\n");
     }
 
 }

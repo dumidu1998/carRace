@@ -41,4 +41,11 @@ public class Queue {
         return size;
     }
 
+    public void printQueue() {
+        System.out.println("Cars in the Queue:");
+        for (int i = 0; i < size; i++) {
+            array[i].printCar();
+        }
+    }
+
 }

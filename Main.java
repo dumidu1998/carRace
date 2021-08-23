@@ -80,7 +80,6 @@ public class Main {
                     cararray[j] = cararray[j + 1];
                 }
                 carcount--;
-                printarr();
             } else {
                 System.out.println("Invalid Car Id");
             }
@@ -101,19 +100,41 @@ public class Main {
     }
 
     public static void getResult() {
+        if (carcount <= 5) {
+            System.out.println("Register at least 6 Cars!!");
+            return;
+        }
         Scanner scanner = new Scanner(System.in);
         Queue round1 = new Queue(6);
+        System.out.println("Enter Round 1 Results");
         for (int i = 0; i < 6; i++) {
             System.out.println("Enter " + (i + 1) + "Place car ID");
-            round1.enqueue(cararray[i]);
+            round1.enqueue(getCarById(scanner.nextLine()));
         }
+        round1.printQueue();
 
         Queue round2 = new Queue(5);
+        System.out.println("Enter Round 2 Results");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter " + (i + 1) + "Place car ID");
+            round2.enqueue(getCarById(scanner.nextLine()));
+        }
+        round2.printQueue();
 
         Queue round3 = new Queue(4);
+        System.out.println("Enter Round 2 Results");
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Enter " + (i + 1) + "Place car ID");
+            round3.enqueue(getCarById(scanner.nextLine()));
+        }
+        round3.printQueue();
+        System.out.println("First Place is:");
+        round3.dequeue().printCar();
+        System.out.println("Second Place is:");
+        round3.dequeue().printCar();
+        System.out.println("Third Place is:");
+        round3.dequeue().printCar();
 
-        // input results
-        // Search
     }
 
     public static boolean checkcarId(String id) {
@@ -125,10 +146,14 @@ public class Main {
         return false;
     }
 
-    public static void printarr() {
+    public static Car getCarById(String carid) {
         for (int i = 0; i < carcount; i++) {
-            System.out.println(cararray[i].getcarId());
+            if (cararray[i].getcarId().equals(carid)) {
+                return cararray[i];
+            }
         }
+        System.out.println("Invalid Car Id");
+        return null;
     }
 
 }

@@ -112,7 +112,7 @@ public class Main {
         Queue round1 = new Queue(6);
         System.out.println("Enter Round 1 Results");
         for (int i = 0; i < 6; i++) {
-            System.out.println("Enter " + (i + 1) + "Place car ID");
+            System.out.println("Enter " + (i + 1) + " Place car ID");
             round1.enqueue(getCarById(scanner.nextLine()));
         }
         round1.printQueue();
@@ -120,7 +120,7 @@ public class Main {
         Queue round2 = new Queue(5);
         System.out.println("Enter Round 2 Results");
         for (int i = 0; i < 5; i++) {
-            System.out.println("Enter " + (i + 1) + "Place car ID");
+            System.out.println("Enter " + (i + 1) + " Place car ID");
             round2.enqueue(getCarById(scanner.nextLine()));
         }
         round2.printQueue();
@@ -128,7 +128,7 @@ public class Main {
         Queue round3 = new Queue(4);
         System.out.println("Enter Round 2 Results");
         for (int i = 0; i < 4; i++) {
-            System.out.println("Enter " + (i + 1) + "Place car ID");
+            System.out.println("Enter " + (i + 1) + " Place car ID");
             round3.enqueue(getCarById(scanner.nextLine()));
         }
         round3.printQueue();

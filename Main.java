@@ -12,7 +12,8 @@ public class Main {
         System.out.println("Lets register some cars first!\n");
 
         while (true) {
-            System.out.println("Enter Operation: \n[1] - Register new Car\n[2]  - View All Cars\n[3] - Delete a Car \n[4] - Search for a Car\n");
+            System.out.println(
+                    "Enter Operation: \n[1] - Register new Car\n[2]  - View All Cars\n[3] - Delete a Car \n[4] - Search for a Car\n");
             int operation = scanner.nextInt();
             switch (operation) {
                 case 1:
@@ -23,14 +24,12 @@ public class Main {
                     break;
                 case 3:
                     DeleteACar();
-                     break;
+                    break;
                 case 4:
                     SearchForACar();
                     break;
             }
         }
-        // 
-
     }
 
     public static Car RegisterCar() {
@@ -41,10 +40,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the registration  number of a car: ");
         String carId = scanner.nextLine();
-        if(checkcarId(carId)){
+        if (checkcarId(carId)) {
             System.out.println("Car ID Already Taken\n");
             return null;
-        };
+        }
+        ;
         System.out.println("Enter the brand of the car: ");
         String brand = scanner.nextLine();
         System.out.println("Enter the sponsor of the car: ");
@@ -62,6 +62,7 @@ public class Main {
             cararray[i].printCar();
         }
     }
+
     public static void DeleteACar() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the unique number of a car to be deleted: ");
@@ -69,50 +70,47 @@ public class Main {
         for (int i = 0; i < carcount; i++) {
             if (cararray[i].getcarId().equals(carid)) {
                 cararray[i] = null;
+                for (int j = i; j < carcount; j++) {
+                    cararray[j] = cararray[j + 1];
+                }
                 carcount--;
-            }else{
+                printarr();
+            } else {
                 System.out.println("Invalid Car Id");
             }
         }
     }
-    
+
     public static void SearchForACar() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the unique number of a car to be find: ");
         String carid = scanner.nextLine();
         for (int i = 0; i < carcount; i++) {
             if (cararray[i].getcarId().equals(carid)) {
-                cararray[i].printCar();  
-                return;          
+                cararray[i].printCar();
+                return;
             }
         }
         System.out.println("Invalid Car Id");
     }
 
     public static void Results() {
-        // input results   
+        // input results
         // Search
     }
 
-    public static boolean checkcarId(String id){
+    public static boolean checkcarId(String id) {
         for (int i = 0; i < carcount; i++) {
             if (cararray[i].getcarId().equals(id)) {
-                return true;          
+                return true;
             }
         }
         return false;
-        
     }
 
-    public static void DeleteCar() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the unique number of a car to be deleted: ");
-        String uniqueid = scanner.nextLine();
+    public static void printarr() {
         for (int i = 0; i < carcount; i++) {
-            if (cararray[i].getcarId().equals(uniqueid)) {
-                cararray[i] = null;
-                carcount--;
-            }
+            System.out.println(cararray[i].getcarId());
         }
     }
 
